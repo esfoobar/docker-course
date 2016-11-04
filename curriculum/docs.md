@@ -95,8 +95,11 @@ $ docker-machine --version
 ### Section 3 - Docker Compose
 ### 3.1 What is Docker Compose?
 - Docker Compose allows you to programmatically spawn multiple containers specifying the relationship between them
-- The docker-compose.yml
+- The [docker-compose.yml](https://docs.docker.com/compose/compose-file/)
 
-### 3.1 A MySQL-based Flask Applications
+### 3.2 A MySQL-based Flask Applications
+- Clone the app
+- Build the image with `docker-compose build`
+- Run the container with `docker-compose up`
 
-### 3.2 A MongoDB-based Flask Application
+### 3.3 A MongoDB-based Flask Application
