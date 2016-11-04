@@ -43,8 +43,12 @@ $ docker-machine --version
 #### 1.4 Docker Concepts
 - Images
   - Versions (:version)
+  - You build an image from a Dockerfile using `docker build`
 - Containers
   - Running or not running
+    - Use `docker ps` to see running containers and `docker ps -a` to see all containers
+    - You start a container using `docker run` or `docker start`
+    - You stop a container using `docker stop`
   - Foreground vs Background
     - Foreground: Starts the process in the container and attach the console to the process’s standard input, output, and standard error
     - Background or detached: Containers started in detached mode exit when the root process used to run the container exits
@@ -69,14 +73,28 @@ $ docker-machine --version
 
 ### Section 2 - Simple Flask Applications
 #### 2.1 A basic Flask App
-- Just using python app.py
+- Just using python hello.py
+- Write the Dockerfile
+- Build the image with `docker build -t hello-app .`
+- Run the container with `docker run -d -p 5000:5000 --name hello-server hello-app`
+- Check that the container is running
+- Go to `localhost:5000`. You should see `Hello, World!`
+- Stop the container using `docker stop hello-server`
+- Check that the container is not running with `docker ps`
+- Check the container is still available with `docker ps -a`
+- You can restart the server using `docker start hello-server`
+- You can log in to the server using `docker exec -it hello-server bash`
+- Caveat: if you change the code, it's not reflected on the container. We'll fix that next.
 
 #### 2.2 A Gunicorn based app
-- Interesting [Docker Voting App](https://github.com/docker/example-voting-app/blob/master/vote/Dockerfile)
+- Write the Dockerfile
+- Build the image with `docker build -t guni-app .`
+- Run the container with `docker run -d -p 80:80 -v /opt/docker-course/apps/2.2:/app --name guni-server guni-app`
+- Note the `-v` flag. That means now the local directory is "mounted" on the container, and any changes you make are reflected on the server, thanks to the `--reload` flag.
 
 ### Section 3 - Docker Compose
 ### 3.1 What is Docker Compose?
-- Docker Compose allows you to programatically spawn multiple containers specifying the relationship between them
+- Docker Compose allows you to programmatically spawn multiple containers specifying the relationship between them
 - The docker-compose.yml
 
 ### 3.1 A MySQL-based Flask Applications
