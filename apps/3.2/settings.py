@@ -1,7 +1,7 @@
 SECRET_KEY = 'you-will-never-guess'
 DEBUG=True
 DB_USERNAME='counter_user'
-DB_PASSWORD=''
+DB_PASSWORD='userpass'
 DATABASE_NAME='counter'
 DB_HOST='mysql'
 DB_URI = "mysql+pymysql://%s:%s@%s/%s" % (DB_USERNAME, DB_PASSWORD, DB_HOST, DATABASE_NAME)

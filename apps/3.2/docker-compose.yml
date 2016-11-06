@@ -19,3 +19,4 @@ services:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: counter
       MYSQL_USER: counter_user
+      MYSQL_PASSWORD: userpass
