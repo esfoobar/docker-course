@@ -5,7 +5,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - /opt/3.2/app:/app
+      - /opt/docker-course/apps/3.2:/counter_app
     links:
       - db:mysql
     container_name: counterapp_web_1
@@ -14,6 +14,7 @@ services:
   db:
     image: mysql:5.7
     restart: always
+    container_name: counterapp_db_1
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: counter

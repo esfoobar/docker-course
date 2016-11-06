@@ -101,5 +101,6 @@ $ docker-machine --version
 - Clone the app
 - Build the image with `docker-compose build`
 - Run the container with `docker-compose up`
+- To use the mysql server do `docker exec -it counterapp_db_1 mysql -uroot -prootpass`
 
 ### 3.3 A MongoDB-based Flask Application
