@@ -1,12 +1,5 @@
 FROM python:3.4.5-slim
 
-# Ensure that Python outputs everything that's printed inside
-# the application rather than buffering it.
-ENV PYTHONUNBUFFERED 1
-
-# Upgrade pip
-RUN pip install --upgrade pip
-
 ## make a local directory
 RUN mkdir /counter_app
 
@@ -26,4 +19,4 @@ ADD . .
 EXPOSE 5000
 
 # Define our command to be run when launching the container
-CMD ["python", "manage.py", "runserver"]
+CMD python manage.py runserver

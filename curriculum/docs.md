@@ -109,3 +109,10 @@ $ docker-machine --version
 - Run tests by doing `docker exec -it counterapp_web_1 python tests.py`
 
 ### 3.3 A MongoDB-based Flask Application
+- In this case we're going to do an application factory with Blueprints
+- Clone the app
+  - Note that I'm using different container names in docker-compose.yml to avoid conflicts
+- Build the image with `docker-compose build`
+- Run the container with `docker-compose up`
+- Hit `/` and see the counter incrementing every time you refresh the page
+- To explore the mongodb database do `docker exec -it `
