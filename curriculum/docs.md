@@ -115,4 +115,6 @@ $ docker-machine --version
 - Build the image with `docker-compose build`
 - Run the container with `docker-compose up`
 - Hit `/` and see the counter incrementing every time you refresh the page
-- To explore the mongodb database do `docker exec -it `
+- To explore the mongodb database, open a new tab and do `docker exec -it counterapp_db_2 mongo`
+  - Do `use counter`, `show collections`, `db.counter.find()`
+- To run tests, do `docker exec -it counterapp_web_2 python tests.py`
