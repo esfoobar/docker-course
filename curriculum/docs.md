@@ -118,3 +118,9 @@ $ docker-machine --version
 - To explore the mongodb database, open a new tab and do `docker exec -it counterapp_db_2 mongo`
   - Do `use counter`, `show collections`, `db.counter.find()`
 - To run tests, do `docker exec -it counterapp_web_2 python tests.py`
+- Using PDB with Docker Compose
+  - Start the database as it's own demon service: `docker-compose up -d db`
+  - Now start the application with pdb enabled: `docker-compose run --service-ports web`
+  - You will get the live log of just the app and you can stop with CTRL-C
+  - Try adding a pdb on the code
+  - To stop the db `docker-compose stop db`
